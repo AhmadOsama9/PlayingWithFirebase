@@ -1,5 +1,5 @@
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-import { app } from "./conf/firebase";
+import { app } from "./src/conf/firebase";
 
 const messaging = getMessaging(app);
 
