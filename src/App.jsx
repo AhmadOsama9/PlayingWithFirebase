@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FirebaseMessagingProvider } from "./context/FirebaseMessagingContext";
 import TopicsManager from "./components/TopicsManager";
-import "../public/firebase-messaging";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AuthComponent from "./components/AuthComponent";
 import ProtectedRoute from "./components/ProtectedRoute";

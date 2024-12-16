@@ -8,11 +8,9 @@ export default defineConfig({
       'js': 'application/javascript',
     }
   },
-  // Add these new configurations
   build: {
     rollupOptions: {
       output: {
-        // Ensure service worker is copied to the dist folder
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'firebase-messaging-sw.js') {
             return 'firebase-messaging-sw.js'
@@ -22,6 +20,5 @@ export default defineConfig({
       }
     }
   },
-  // Ensure public directory is correctly set
   publicDir: 'public'
 })
