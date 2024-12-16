@@ -82,7 +82,7 @@ export const deleteChannel = async (name) => {
 export const subscribeToChannel = async (name, token) => {
   try {
     // Make an API call to your backend to subscribe the user
-    const response = await fetch(`http://localhost:4000/channels/${name}/subscribe`, {
+    const response = await fetch(`https://playingwithfirebaseserver.onrender.com/channels/${name}/subscribe`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export const subscribeToChannel = async (name, token) => {
 // Unsubscribe from a channel
 export const unsubscribeFromChannel = async (name, token) => {
   try {
-    const response = await fetch(`http://localhost:4000/channels/${name}/unsubscribe`, {
+    const response = await fetch(`https://playingwithfirebaseserver.onrender.com/channels/${name}/unsubscribe`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
