@@ -13,7 +13,7 @@ export const FirebaseMessagingProvider = ({ children }) => {
     try {
       const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js");
       const currentToken = await getToken(messaging, {
-        vapidKey: "BDTLU5jxvCxzIXp6YGinMfN3kiXw8to285DIj0KVLpZ7ckcko9zb4qbjcsZsnWWCjXW3JNIw6ZGmaYgpouqi4po",
+        vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY,
         serviceWorkerRegistration: registration,
       });
       if (currentToken) {
