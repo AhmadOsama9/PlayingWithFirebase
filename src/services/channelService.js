@@ -108,6 +108,7 @@ export const subscribeToChannel = async (name, token) => {
 // Unsubscribe from a channel
 export const unsubscribeFromChannel = async (name, token) => {
   try {
+    console.log("it enters in the unsubscribe function")
     const response = await fetch(`https://playingwithfirebaseserver.onrender.com/channels/${name}/unsubscribe`, {
       method: 'POST',
       headers: {
