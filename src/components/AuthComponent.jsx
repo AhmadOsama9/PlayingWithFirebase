@@ -85,7 +85,7 @@ const AuthComponent = () => {
         throw new Error("Invalid message object");
       }
 
-      const response = await fetch('http://localhost:4000/send-notification', {  // Adjust the URL as needed
+      const response = await fetch('https://playingwithfirebaseserver.onrender.com/send-notification', {  // Adjust the URL as needed
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
