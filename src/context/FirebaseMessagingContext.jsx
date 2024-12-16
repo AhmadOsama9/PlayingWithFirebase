@@ -9,25 +9,24 @@ export const FirebaseMessagingProvider = ({ children }) => {
 
   const requestPermission = async () => {
     const messaging = getMessaging(app);
-
+  
     try {
       // Check service worker support
       if (!('serviceWorker' in navigator)) {
         console.error('Service Workers not supported');
         return null;
       }
-
-      // Register service worker
+  
+      // Remove { type: 'module' }
       const registration = await navigator.serviceWorker.register(
-        '/firebase-messaging-sw.js', 
-        { type: 'module' }
+        '/firebase-messaging-sw.js'
       );
-
+  
       const currentToken = await getToken(messaging, {
         vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY,
         serviceWorkerRegistration: registration,
       });
-
+  
       if (currentToken) {
         console.log("Current Token:", currentToken);
         setToken(currentToken);
